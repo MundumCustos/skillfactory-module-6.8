@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="progress" style="height: 40px; margin-bottom: 60px;"> 
+			  <div
+			    id="my-progress-bar"
+			    class="progress-bar bg-warning"
+			    role="progressbar"
+			    style="width: 0%">
+			  </div>
+			</div>
+			<div class="group-buttons">
+			  <button onclick="funcProgress(1)" type="button" class="btn btn-outline-primary">+1%</button>
+			  <button onclick="funcProgress(3)" type="button" class="btn btn-outline-success">+3%</button>
+			  <button onclick="funcProgress(7)" type="button" class="btn btn-outline-danger">+7%</button>
+			</div>
+		</div>
+		
+		<script src="./js/jquery-3.4.1.min.js"></script>
+	    <script src="./js/bootstrap.bundle.min.js"></script>
+
+	    <script type="text/javascript">
+	    	var totalProgress = 0;
+	    	function funcProgress(pcProgress) {
+	    		totalProgress = totalProgress + pcProgress;
+	    		// console.log(String(totalProgress) + "%")
+	    		console.log(pcProgress)
+	    		if (pcProgress === 1) {$(".progress-bar").css('color', '#000000')};
+	    		if (pcProgress === 3) {$(".progress-bar").css('color', '#000000')};
+	    		if (pcProgress === 7) {$(".progress-bar").css('color', '#000000')};
+
+	    		if (totalProgress <= 25) {
+	    			$(".progress-bar").prop("class", "progress-bar")} 
+	    			else {
+	    				if (totalProgress <= 75) {$(".progress-bar").prop("class", "progress-bar bg-success")}
+	    					else {$(".progress-bar").prop("class", "progress-bar bg-danger")}
+	    		}
+
+	    		if (totalProgress > 100) {
+	    			totalProgress = 100;
+	    			$("button").prop("disabled", true);
+	    			$(".progress-bar").prop("class", "progress-bar bg-danger")
+	    		};
+
+	    		$("#my-progress-bar").width(String(totalProgress) + "%");
+	    		$('.progress-bar').text(totalProgress + '%');
+	    	}
+	    </script>
+	</body>
+</html>

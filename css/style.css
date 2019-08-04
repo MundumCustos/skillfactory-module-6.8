@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    text-align: left;
+    background-color: #fff;
+}
+
+.container {
+    padding: 30px 20px 40px 20px;
+    margin-top: 150px;
+    width: 500px
+}
+
+.group-buttons {
+	margin-left: 22px;
+	margin-bottom: 20px;
+}
+
+
+.progress-bar {
+	color: #000000;
+	font-size: 18px;
+}
